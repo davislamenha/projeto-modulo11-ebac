@@ -4,8 +4,69 @@
   margin: 0;
   padding: 0;
 }
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
 
 /* ==== GLOBAL ==== */
 body {
   font-family: 'Roboto', sans-serif;
+}
+.container {
+  width: min(100% - 30px, 1280px);
+  margin-inline: auto;
+}
+
+/* ==== HEADER ==== */
+header {
+  padding-top: 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+header .container:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  gap: 18px;
+}
+.menu > li {
+  padding: 16px 16px 16px 0;
+  position: relative;
+}
+
+.menu li::before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  top: calc(50% - 6px);
+  left: -10px;
+  border-left: 6px solid transparent;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  transition: 0.3s ease-in;
+}
+
+.menu li:hover::before {
+  border-left-color: #111;
+}
+
+.menu li:hover .submenu {
+  display: flex;
+}
+
+.submenu {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid #111;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 300px;
 }
