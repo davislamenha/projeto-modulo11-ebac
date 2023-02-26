@@ -27,6 +27,10 @@ section h2,
 aside h2 {
   margin-bottom: 24px;
 }
+button:hover {
+  color: #fff;
+  background-color: #222;
+}
 
 /* ==== HEADER ==== */
 header {
@@ -40,6 +44,28 @@ header .container:first-child {
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+form {
+  display: flex;
+}
+form input {
+  padding: 5px;
+  font-size: 1em;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #111;
+}
+form button {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 1em;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  background-color: #111;
+  color: #ccc;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: 0.3s all;
 }
 
 .btn-container {
@@ -134,14 +160,17 @@ header .container:first-child {
     padding-bottom: 16px;
   }
   .btn-menu {
+    cursor: pointer;
     background-color: #111;
     color: #ccc;
     border: none;
+    border-radius: 5px;
     font-size: 1.2em;
     font-weight: bold;
     letter-spacing: 4px;
     padding: 10px 20px;
     margin-top: 6px;
+    transition: 0.3s all;
   }
   .menu {
     display: none;
