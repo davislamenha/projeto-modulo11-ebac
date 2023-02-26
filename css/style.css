@@ -41,10 +41,8 @@ header .container:first-child {
   flex-wrap: wrap;
   gap: 12px;
 }
-nav {
-  padding-bottom: 16px;
-}
-.btn-menu {
+
+.btn-container {
   display: none;
 }
 .menu {
@@ -52,11 +50,12 @@ nav {
   gap: 18px;
 }
 .menu > li {
-  padding: 16px 16px 0 0;
+  cursor: pointer;
+  padding: 16px 16px 16px 0;
   position: relative;
 }
 
-.menu li::before {
+.menu > li::before {
   position: absolute;
   content: '';
   display: inline-block;
@@ -74,16 +73,19 @@ nav {
 
 .menu li:hover .submenu {
   display: flex;
+  z-index: 1;
 }
 
 .submenu {
   display: none;
+  background-color: #fff;
+  padding: 6px;
   flex-direction: column;
   gap: 6px;
   border: 1px solid #111;
   position: absolute;
   left: 0;
-  top: 100%;
+  top: calc(100%);
   width: 300px;
 }
 
@@ -127,10 +129,11 @@ nav {
   header .container:first-child {
     margin-bottom: 6px;
   }
-  .btn-menu {
+  .btn-container {
     display: flex;
+    padding-bottom: 16px;
   }
-  .btn-menu button {
+  .btn-menu {
     background-color: #111;
     color: #ccc;
     border: none;
