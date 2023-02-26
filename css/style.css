@@ -32,20 +32,27 @@ aside h2 {
 header {
   padding-top: 16px;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 60px;
 }
 
 header .container:first-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+nav {
+  padding-bottom: 16px;
+}
+.btn-menu {
+  display: none;
 }
 .menu {
   display: flex;
   gap: 18px;
 }
 .menu > li {
-  padding: 16px 16px 16px 0;
+  padding: 16px 16px 0 0;
   position: relative;
 }
 
@@ -86,6 +93,7 @@ header .container:first-child {
   margin-inline: auto;
   gap: 18px;
   grid-template-columns: 70% auto;
+  padding-block: 60px;
 }
 
 #destaque {
@@ -112,4 +120,76 @@ header .container:first-child {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* ==== RESPONSIVO ==== */
+@media (max-width: 768px) {
+  header .container:first-child {
+    margin-bottom: 6px;
+  }
+  .btn-menu {
+    display: flex;
+  }
+  .btn-menu button {
+    background-color: #111;
+    color: #ccc;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 4px;
+    padding: 10px 20px;
+    margin-top: 6px;
+  }
+  .menu {
+    display: none;
+  }
+  .menu > li {
+    padding: 6px 6px 6px 0;
+  }
+  .menu li::before {
+    display: none;
+  }
+  .submenu {
+    display: flex;
+    gap: 6px;
+    border: none;
+    position: initial;
+    width: 100%;
+    padding-block: 6px;
+  }
+  .conteudo {
+    position: relative;
+    grid-template-columns: 1fr;
+    padding-bottom: 20px;
+  }
+  #destaque .noticia a {
+    font-size: 1.4em;
+  }
+  #destaque .noticia a img {
+    margin-bottom: 6px;
+  }
+  .novidades {
+    grid-row: 1;
+    display: flex;
+    gap: 12px;
+    overflow-x: scroll;
+  }
+  .novidades h2 {
+    position: absolute;
+    top: 20px;
+  }
+  .novidades .noticia a {
+    width: 240px;
+  }
+  .noticia a h3 {
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 540px) {
+  #destaque .noticia a {
+    flex-wrap: wrap;
+  }
+  #destaque .noticia a h3 {
+    max-width: 320px;
+  }
 }
